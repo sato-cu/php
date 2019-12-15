@@ -1,0 +1,89 @@
+
+
+【事前準備】
+
+●FAQ OSS： phpmyfaq 2.9.13
+　インストールサイト (まず以下のページから phpmyfaqのzipをダウンロードだけしておいてください) 
+　https://www.phpmyfaq.de/download
+　
+●Webサーバ： Apache 2.4
+　インストールガイド
+　https://techacademy.jp/magazine/1846
+　https://www.deep-blog.jp/engineer/archives/4071/
+
+●OSS 言語：php 7.2
+　インストールガイド
+  https://weblabo.oscasierra.net/php-72-windows-install/
+  https://webkaru.net/php/windows-php-instal/
+  
+　php.iniの設定
+　https://qiita.com/knife0125/items/0e1af52255e9879f9332
+  
+●データベース： mysql 8.0 or Apache Derby
+　MySQLのインストール方法
+　http://proengineer.internous.co.jp/content/columnfeature/6529
+
+　MySQLをインストールするにあたり、VisualStudioとPythonを導入する必要があります
+
+　○VisualStudioのインストール方法
+　・インストールページ
+　https://visualstudio.microsoft.com/ja/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017&rr=https%3A%2F%2Fdocs.microsoft.com%2Fja-jp%2Fvisualstudio%2Finstall%2Finstall-visual-studio%3Fview%3Dvs-2017
+
+　・インストール手順
+　https://qiita.com/shuhey/items/6cbbd97aa10c70f0b92d
+
+　○Python
+　・インストール&インストール手順
+　https://qiita.com/psychoroid/items/9930e871fb8169a91f9a
+
+
+
+●curl
+  https://qiita.com/kuni0219/items/91687b590a12d38cf383
+   →https://curl.haxx.se/download.html
+　（ダウンロード後、ディレクトリ名を「curl」へ変更後、Program Filesへ移動しパスを通す）
+　「環境変数PATHに C:\Program Files\curl\bin を追加。」
+　https://qiita.com/shiftsphere/items/5831cd2863689c41f993
+
+
+　パスのとおしかたは「https://weblabo.oscasierra.net/php-72-windows-install/」 を参考
+
+
+
+
+【phpmyfaq導入方法】
+
+・phpMyFAQ の参考になる導入方法のサイト （ざっくりとした手順）
+　https://www.pochaneko.com/phpmyfaq-install/
+  https://www.javadrive.jp/php/install/index8.html
+
+　 →https://www.phpmyfaq.de/
+　　→http://localhost/phpmyfaq/setup/index.php
+　 （phpmyfaq GUIでのsetupページ、Apache経由でアクセスする必要があります） 
+　　※Webブラウザ上でインストールが開始されるので（画面遷移無し）、あやまって画面を閉じたりしないように注意
+
+・phpMyFAQ の参考になる導入方法のサイト
+　https://seesaawiki.jp/w/syo1976/d/phpMyFAQ
+
+
+
+
+【その他 参考情報】
+
+・Apache 起動停止コマンド
+　httpd -k stop
+　httpd -k start
+　httpd -k restart
+
+・Windowsでのプロセス再起動は、以下からでも可能
+　スタートアップ → コントロールパネル → 管理ツール →	サービス より
+　
+・以下はやっておかないと動かないかも･･
+　https://qiita.com/ryujimiya2361/items/4b0212e7e3c04124f47d
+　deplister.exe ext/php_curl.dll
+
+・MySQL8.0の場合は、以下が必要
+　https://www.petitmonte.com/database/mysql_authentication_plugin.html
+
+
+

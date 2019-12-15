@@ -1,0 +1,123 @@
+**********************************************************************************************************************
+●ログイン方法
+コマンドプロンプトを立ち上げ
+cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"
+mysql -u test01 -p <Enterを入力>
+Enter password : <PWを入力>
+
+●データベース作成方法
+CREATE DATABASE phpmyfaqDB;
+
+（以下のテーブル作成は不要）
+CREATE TABLE phpmyfaqdb.article;
+
+●ホスト名変更方法、認証方法変更方法
+(ユーザ一覧の表示)
+SELECT user, host, plugin FROM mysql.user;
+
+(認証方法変更) ※ MySQL8.0 で必要 （これをやらないとphpMyFAQのインストール不可になる）
+ALTER USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'パスワード';
+
+(ホスト名変更) ※ %はすべてのホスト名対応なので、特に以下作業不要
+rename user test01@% to test01@localhost
+
+
+**********************************************************************************************************************
+
+●コマンド メモ
+
+○データベースの一覧を表示
+show databases;
+
+○現在実行中のプロセスの一覧を見る
+show processlist;
+
+○テーブルのデータ 中身の確認
+① DBへ接続
+①-1
+use (DB名);
+use phpmyfaqdb;
+①-2
+現在接続しているデータベースを確認
+select database();
+
+② テーブルを表示する
+show tables from (データベース名);
+show tables from phpmyfaqdb;
+
+③ テーブルをセレクトする
+select * from (テーブル名);
+select * from phpmyfaqdbfaqcategories;
+
+
+④ 実行結果 (sample)
+
+mysql> show tables from phpmyfaqdb;
++---------------------------------+
+| Tables_in_phpmyfaqdb            |
++---------------------------------+
+| phpmyfaqdbfaqadminlog           |
+| phpmyfaqdbfaqattachment         |
+| phpmyfaqdbfaqattachment_file    |
+| phpmyfaqdbfaqcaptcha            |
+| phpmyfaqdbfaqcategories         |
+| phpmyfaqdbfaqcategory_group     |
+| phpmyfaqdbfaqcategory_user      |
+| phpmyfaqdbfaqcategoryrelations  |
+| phpmyfaqdbfaqchanges            |
+| phpmyfaqdbfaqcomments           |
+| phpmyfaqdbfaqconfig             |
+| phpmyfaqdbfaqdata               |
+| phpmyfaqdbfaqdata_group         |
+| phpmyfaqdbfaqdata_revisions     |
+| phpmyfaqdbfaqdata_tags          |
+| phpmyfaqdbfaqdata_user          |
+| phpmyfaqdbfaqglossary           |
+| phpmyfaqdbfaqgroup              |
+| phpmyfaqdbfaqgroup_right        |
+| phpmyfaqdbfaqinstances          |
+| phpmyfaqdbfaqinstances_config   |
+| phpmyfaqdbfaqnews               |
+| phpmyfaqdbfaqquestions          |
+| phpmyfaqdbfaqright              |
+| phpmyfaqdbfaqsearches           |
+| phpmyfaqdbfaqsessions           |
+| phpmyfaqdbfaqstopwords          |
+| phpmyfaqdbfaqtags               |
+| phpmyfaqdbfaquser               |
+| phpmyfaqdbfaquser_group         |
+| phpmyfaqdbfaquser_right         |
+| phpmyfaqdbfaquserdata           |
+| phpmyfaqdbfaquserlogin          |
+| phpmyfaqdbfaqvisits             |
+| phpmyfaqdbfaqvoting             |
+割愛
++---------------------------------+
+70 rows in set (0.00 sec)
+
+
+mysql> select * from phpmyfaqdbfaqcategories;
++----+------+-----------+------+-------------------------------------+---------+
+----------+--------+
+| id | lang | parent_id | name | description                         | user_id |
+ group_id | active |
++----+------+-----------+------+-------------------------------------+---------+
+----------+--------+
+|  1 | ja   |         0 | WAS  | WASについてなんでも質問してください |       1 |
+       -1 |      1 |
+|  2 | ja   |         0 | IHS  | IHSについてなんでも質問してください |       1 |
+       -1 |      1 |
++----+------+-----------+------+-------------------------------------+---------+
+----------+--------+
+2 rows in set (0.05 sec)
+
+mysql> 
+
+
+
+
+
+
+
+
+
