@@ -1,3 +1,3 @@
 # php
 PHPの勉強
-phpmyfaq のセットアップ方法について
+phpmyfaq のセットアップ方法
