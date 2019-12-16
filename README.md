@@ -1,2 +1,3 @@
 # php
-php study
+PHPの勉強
+phpmyfaq のセットアップ方法について
